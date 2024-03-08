@@ -9,7 +9,7 @@ title = "Linera"
 edition = "2021"
 
 [build]
-extra-watch-dirs = ["po", "third_party"]
+extra-watch-dirs = ["po"]
 
 [preprocessor.gettext]
 after = ["links"]
