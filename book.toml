@@ -4,3 +4,16 @@ language = "en"
 multilingual = false
 src = "src"
 title = "Linera"
+
+[rust]
+edition = "2021"
+
+[build]
+extra-watch-dirs = ["zh","en"]
+
+
+[preprocessor]
+
+[preprocessor.gettext]
+after = ["links"]
+
