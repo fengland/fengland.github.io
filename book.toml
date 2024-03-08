@@ -1,5 +1,5 @@
 [book]
-authors = ["fengland"]
+authors = ["Martin Geisler"]
 language = "en"
 multilingual = false
 src = "src"
@@ -9,11 +9,60 @@ title = "Linera"
 edition = "2021"
 
 [build]
-extra-watch-dirs = ["zh","en"]
-
-
-[preprocessor]
+extra-watch-dirs = ["po", "third_party"]
 
 [preprocessor.gettext]
 after = ["links"]
 
+[preprocessor.svgbob]
+renderers = ["html"]
+after = ["gettext"]
+class = "bob"
+
+[preprocessor.course]
+verbose = false # Report timing information.
+
+[output.pandoc]
+optional = true
+hosted-html = "https://google.github.io/comprehensive-rust/"
+
+[output.pandoc.profile.pdf]
+output-file = "Linera.pdf"
+pdf-engine = "lualatex"
+
+[output.pandoc.profile.pdf.variables]
+mainfont = "Noto Serif"
+sansfont = "Noto Sans"
+monofont = "Noto Sans Mono"
+mainfontfallback = ["NotoColorEmoji:mode=harf"]
+monofontfallback = [
+  "NotoColorEmoji:mode=harf",
+  "NotoSansMath:",
+  "NotoSansMonoCJKSC:",
+]
+geometry = ["margin=1.25in"]
+linkcolor = "blue"
+urlcolor = "red"
+
+[output.html]
+curly-quotes = true
+additional-js = ["theme/speaker-notes.js", "theme/redbox.js"]
+additional-css = [
+  "theme/css/svgbob.css",
+  "theme/css/redbox.css",
+  "theme/css/speaker-notes.css",
+  "theme/css/language-picker.css",
+  "theme/css/rtl.css",
+]
+site-url = "/Linera/"
+
+[output.html.fold]
+enable = true
+level = 0
+
+[output.html.playground]
+editable = true
+line-numbers = true
+
+[output.html.search]
+use-boolean-and = true
