@@ -26,11 +26,3 @@ runs:
     - name: Install mdbook-i18n-helpers
       run: cargo install mdbook-i18n-helpers --locked --version 0.3.1
       shell: bash
-
-    - name: Install mdbook-exerciser
-      run: cargo install --path mdbook-exerciser --locked
-      shell: bash
-
-    - name: Install mdbook-course
-      run: cargo install --path mdbook-course --locked
-      shell: bash
