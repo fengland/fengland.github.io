@@ -42,6 +42,6 @@ mdbook build -d "$dest_dir"
 echo '// Disabled in published builds, see build.sh' > "${dest_dir}/html/theme/redbox.js"
 
 mv "$dest_dir/pandoc/pdf/Linera.pdf" "$dest_dir/html/"
-(cd "$dest_dir/" && zip --recurse-paths ../html/Linera.zip Linera/)
+# (cd "$dest_dir/" && zip --recurse-paths ../html/Linera.zip Linera/)
 
 echo "::endgroup::"
